@@ -1,0 +1,25 @@
+{% extends "partials/base.html" %}
+{% block title %} Delete page {% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                <h5>Editer les Informations de l'établissement</h5>
+                    <hr>
+                
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <a class="btn btn-warning" href="{% url 'etablissement_vue' %}">Annuler</a>
+                    <input class="btn btn-outline-info" type="submit" value="Editer">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

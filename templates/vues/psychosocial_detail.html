@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% block title %} detail du diagnostic psychologique {% endblock %}
+
+{% block content %}
+
+ {% for psycho in psychos %}
+    <div class="row mt-1">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                
+                <hr>
+                <h4 class="text-center text-uppercase">Diagnostic psychosocial de {{ psycho.beneficiaire }}</h4>
+                <hr>
+                <table class="table bg-white table-borderless">
+                   <tbody>
+                        <tr>
+                           <th scrop="row">Date du dernier diagnostic </th>
+                           <td>{{ psycho.date_jour }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nom du bénéficiaire  </th>
+                           <td>{{ psycho.beneficiaire  }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nombre de sorties par semaine  </th>
+                           <td>{{ psycho.get_sorties_par_sem_display }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Alimentation  </th>
+                           <td>{{ psycho.get_alimentation_display }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nombre de chute annuel  </th>
+                           <td>{{ psycho.get_chute_annuel_display }}</td>
+                       </tr>
+                   </tbody>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+

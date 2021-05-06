@@ -1,0 +1,63 @@
+{% extends 'partials/base.html' %}
+{% block title %} Vue global des bénéficiaires {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h4 class="text-center text-uppercase mt-3">
+     Liste des bénéficiaires 
+</h4>
+<hr>
+<div class="container">
+  <div class="row my-8">
+    <div class="col"></div>
+    <div class="col-md-12">
+      <table class="table bg-white">
+    <thead class="bg"  style="background-color: rgb(247, 172, 22);">
+        <tr clas="text-white">
+          <th scope="col">Résidence</th>
+          <th scope="col">Noms & Prénoms</th>
+          <th scope="col">Date de naissance</th>
+          <th scope="col">Age</th>
+          <th scope="col">Orientation</th>
+          <th scope="col">Alertes</th>
+          <th scope="col">coach</th>
+          <th scope="col">Editer</th>
+          <th scope="col">Supprimer</th>
+          <th scope="col">More</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% include 'vues/beneficiaire_filtre.html' %}
+        {% for item in items %}
+        {% if item.coach == user %}
+        <tr>
+         
+          <td> <a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.residence }}</a></td>
+          
+          <td><a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.nom }} {{ item.prenom }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.date_naissance }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.Age }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.orientation }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.Alertes }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'beneficiaire_detail' item.id %}">{{ item.coach }}</a></td>
+          <td>
+            <a class="btn btn-outline-success btn-sm" href="{% url 'beneficiaire_update' item.id %}">editer</a>
+          </td>
+            <td> 
+            <a class="btn btn-outline-danger btn-sm" href="{% url 'beneficiaire_delete' item.id %}">supprimer</a>
+          </td> 
+          <td>
+            <a  class="btn btn-outline-info btn-sm" href="{% url 'beneficiaire_detail' item.id %}">Détails</a>
+          </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+
+  {% endblock %}
+  

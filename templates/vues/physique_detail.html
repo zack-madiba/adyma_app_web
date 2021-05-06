@@ -1,0 +1,50 @@
+{% extends 'partials/base.html' %}
+{% block title %} Vue global des bénéficiaires {% endblock %}
+
+{% block content %}
+     <div class="row mt-1">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                {% for forme in formes %}
+                {% if formes %}
+                <hr>
+                <h4 class="text-center text-uppercase">Diagnostic physique de {{ forme.beneficiaire.nom }} {{ forme.beneficiaire.prenom }}</h4>
+                <hr>
+                <table class="table bg-white table-borderless">
+                   <tbody>
+                        <tr>
+                           <th scrop="row">Date du dernier diagnostic </th>
+                           <td>{{ forme.date }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nom du bénéficiaire  </th>
+                           <td>{{ forme.beneficiaire.nom }} {{ forme.beneficiaire.prenom }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nombre de sorties par semaine  </th>
+                           <td>{{ forme.get_tourner_tete_display }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Alimentation  </th>
+                           <td>{{ forme.get_coord_bras_jamb_display }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nombre de chute annuel  </th>
+                           <td>{{ forme.get_depl_dehors_display }}</td>
+                       </tr>
+                       <tr>
+                        <th scrop="row">Alerstes  </th>
+                        <td>{{ forme.Alertes }}</td>
+                    </tr>
+                   </tbody>
+                </table>
+                {% else %}
+                <h1>Le bénéficiaire n'a pas de diagnostic physique</h1>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

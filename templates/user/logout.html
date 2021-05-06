@@ -1,0 +1,21 @@
+{% extends 'partials/base.html' %}
+{% block title %} Vous êtes déconnecté {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+                <div class="border bg-white p-3">
+                    <h6 class="text-center">Page de déconnexion</h6>
+                    <div class="alert alert-danger">
+                        <h5 class="text-center">Vous êtes déconnecté </h5>
+                    </div>
+                    <a  class=" text-center" style="color: rgb(8, 8, 8);" href="{% url 'user_login' %}">Connectez vous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

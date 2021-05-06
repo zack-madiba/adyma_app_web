@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% block title %} Vue global des bénéficiaires {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h4 class="text-center text-uppercase mt-3">
+     Liste des établissements 
+</h4>
+<hr>
+<div class="container">
+  <div class="row my-8">
+    <div class="col"></div>
+    <div class="col-md-12">
+      <table class="table bg-white">
+    <thead class="bg" style="background-color: rgb(240, 198, 14);">
+        <tr clas="text-white">
+          <th scope="col">Nom de l'établissement</th>
+          <th scope="col">Nom du directeur</th>
+          <th scope="col">Descriptif</th><br>
+          <th scope="col text-center">Editer</th>
+          <th scope="col text-center">Supprimer</th>
+          <th scope="col text-center">Infos</th>
+
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for residence in residences %}
+        <tr>
+         
+          <td> <a  class="text text-dark" href="{% url 'etablissement_detail' residence.id %}">{{ residence.nom_etablissement }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'etablissement_detail' residence.id %}">{{ residence.nom_directeur }}</a></td>
+          <td><a  class="text text-dark" href="{% url 'etablissement_detail' residence.id %}">{{ residence.ville }}{{ residence.adresse }} </a></td>
+          <td>
+            <a class="btn btn-outline-info btn-sm" href="{% url 'etablissement_update' residence.id %}">Update</a></td>
+            <td><a class="btn btn-outline-danger btn-sm" href="{% url 'etablissement_delete' residence.id %}">Delete</a></td>            
+            <td><a  class="btn btn-outline-success btn-sm" href="{% url 'etablissement_detail' residence.id %}">More</a></td>
+          
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+
+  {% endblock %}
+  

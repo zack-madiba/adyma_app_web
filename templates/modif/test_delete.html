@@ -1,0 +1,27 @@
+{% extends "partials/base.html" %}
+{% block title %} Delete page {% endblock %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                <h5>Supprimer le Test</h5
+                    <hr>
+                <div class="alert alert-danger">
+                    <h6>Supprimer le Test ?</h6>
+                </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <a class="btn btn-secondary" href="{% url 'beneficiaire' %}">Annuler</a>
+                    <input class"btn btn-danger" type="submit" value="Supprimer">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

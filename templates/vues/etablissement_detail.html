@@ -1,0 +1,69 @@
+{% extends 'partials/base.html' %}
+{% block title %} Detail de l'établissement {% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="border bg-white p-3 ">
+    <div class="row mt-1">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                <h4 class="text-center text-uppercase">Vue détaillée de l'établissement {{ etablissements.nom_etablissement }} </h4>
+                <hr>
+                <table class="table bg-white table-borderless">
+                   <tbody>
+                        <tr>
+                           <th scrop="row">Nom de létablissement : </th>
+                           <td>{{ etablissements.nom_etablissement }}</td>
+                       </tr>
+                       <tr>
+                        <th scrop="row">Directeur / Directrice : </th>
+                        <td>{{ etablissements.nom_directeur }}</td>
+                    </tr> 
+                       <tr>
+                           <th scrop="row">Ville : </th>
+                           <td>{{ etablissements.ville }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Adresse : </th>
+                           <td>{{ etablissements.adresse }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Description de l'établissement : </th>
+                           <td>{{ etablissements.descriptif }}</td>
+                       </tr>
+
+                       <tr>     
+                           <th scrop="row">Groupe dans l'établissement :</th>
+                           <td>{{ equipes }}</td>
+                       </tr>
+                        
+                   </tbody>
+                </table>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+            <p>
+                    <a class="btn rounded-pill bg-info" data-bs-toggle="collapse" href="#"role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Diagnostic l'établissement
+                    </a>
+            </p>
+            <p>
+                    <a class="btn rounded-pill bg-info"  href="#"role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Tableau bilan
+                    </a>
+            </p>
+        </div>
+            </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+

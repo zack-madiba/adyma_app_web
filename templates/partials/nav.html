@@ -1,0 +1,63 @@
+{% load static %}
+{% csrf_token %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--Fontawesome link-->
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(247, 172, 22);">
+    {% if user.is_authenticated and user.is_staff and user.is_superuser %}
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'logo-adyma.png' %}" height="60px" /></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link adyma" href="{% url 'home' %}">Accueil <i class="fa fa-home" aria-hidden="true"></i>
+                <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <button type="button" class="btn rounded bg-light text-dark" style="margin-right: 2em;">
+            
+              <a href="{% url 'inscription' %}" >
+                <span class="badge bg-light text-dark" >Nouveau bénéficiaire +</span></a>
+            
+          </button>
+          <form class="form-inline my-2 my-lg-0" method=POST action="{% url 'search' %}">
+
+            {% csrf_token %}
+
+              <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="Search" name="searched">
+              <button class="btn btn-outline-success  my-sm-0" type="submit">Search</button>
+          </form>
+          <div class="text-menu ml-4" aria-labelledby="navbarDropdown">
+            <a class="nav-link text-primary text-center fw-bolder" href="#">Compte connecté :<br>
+              <span class="text-dark fs-1 fw-bold">{{ user.username }}</span>
+            </a>
+          </div>
+              <div class="text-menu ml-4" aria-labelledby="navbarDropdown">
+                <a class="btn btn-outline-dark" class=" text-center" style="color: rgb(8, 8, 8);" href="{% url 'user_logout' %}">Déconnexion</a>
+                {% else %}
+                <a  style="color: rgb(8, 8, 8);" class="text p-1 offset-mt-9"  href="{% url 'user_login' %}">Connectez vous</a>
+                <div class="dropdown-divider"></div>
+                <div class="container">
+                  <a class="text p-1 offset-md-10" class=" text-center" style="color: rgb(8, 8, 8);" href="{% url 'user_register' %}">Enregistrer un compte</a>
+                </div>
+                {% endif %}     
+              </div>
+          
+      </div>
+      
+  </nav>
+</body>
+</html>

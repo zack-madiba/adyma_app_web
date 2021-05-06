@@ -1,0 +1,135 @@
+{% extends 'partials/base.html' %}
+{% block title %} Vue détaillée du bénéficiaire {% endblock %}
+
+{% block content %}
+
+<div class="col-md-12">
+    <div class="border bg-white p-3 ">
+
+    <div class="row mt-1">
+        <div class="col-md-3">
+            <p>
+                <a class="btn rounded-pill bg-info" data-bs-toggle="collapse" href="{% url 'psychosocial_detail' beneficiaires.id %}"role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Resultat du diagnostic psychosocial
+                </a>
+            </p>
+            <p>
+                <a class="btn rounded-pill bg-info" data-bs-toggle="collapse" href="{% url 'physique_detail' beneficiaires.id %}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Resultat du diagnostic Physique  
+                </a>
+            </p>
+            <p>
+                <a class="btn rounded-pill bg-info" data-bs-toggle="collapse" href="{% url 'test_detail' beneficiaires.id %}" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Resultat Fiche test
+                </a>
+            </p>
+        </div>
+        <div class="col-md-6 ">
+            <div class="border bg-white p-3 ">
+                <h4 class="text-center text-uppercase">Fiche d'entretien initial individuel</h4>
+                <hr>
+                <h4 class="text-center text-uppercase">Détails de {{ beneficiaires.nom }} {{ beneficiaires.prenom }}</h4>
+                <hr>
+                <table class="table bg-white table-borderless">
+                   <tbody>
+                        <tr>
+                           <th scrop="row">Nom  </th>
+                           <td>{{ beneficiaires.nom }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Prénom  </th>
+                           <td>{{ beneficiaires.prenom }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Etablissement  </th>
+                           <td>{{ beneficiaires.residence }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Date inscription  </th>
+                           <td>{{ beneficiaires.date }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Date de naissance  </th>
+                           <td>{{ beneficiaires.date_naissance }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Age  </th>
+                           <hr>
+                           <td>{{ beneficiaires.Age }} ans</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Numéro de téléphone  </th>
+                           <td>{{ beneficiaires.phone }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Maladie/Pathologie  </th>
+                           <td>{{ beneficiaires.maladie_path }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Hospitalisation dans l'année  </th>
+                           <td>{{ beneficiaires.hospitalisation_année }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Chutes dans l'année  </th>
+                           <td>{{ beneficiaires.chute_annuel }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Kiné   </th>
+                           <td>{% if beneficiaires.kiné %}Oui{% else %}Non{{ beneficiaires.kiné }} {% endif %}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">5 mètres – outils – levers de chaise  </th>
+                           <td>{{ beneficiaires.metre_outil }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Nombre de sorties par semaine  </th>
+                           <td>{{ beneficiaires.nb_sorties_semaine }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Aller au sol et se relever  </th>
+                           <td>{{ beneficiaires.sol_relevé }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Intérêt du projet  </th>
+                           <td>{{ beneficiaires.inte_proj }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Freins à la mobilité</th>
+                           <td>{{ beneficiaires.frein_mob }}</td>
+                       </tr>
+                       <tr>
+                            <th scrop="row">Thème de travail souhaité  </th>
+                            <td>{{ beneficiaires.them_trav_souh }}</td>
+                        </tr> 
+                       <tr>
+                           <th scrop="row">Orientation  </th>
+                           <td>{{ beneficiaires.orientation }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Contractualisation  </th>
+                           <td>{% if beneficiaires.contractualisation %}Oui{% else %}Non{{ beneficiaires.contractualisation }}{% endif %}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Commentaire  </th>
+                           <td>{{ beneficiaires.comment }}</td>
+                       </tr>
+                       <tr>
+                           <th scrop="row">Groupe  </th>
+                           <td>{{ beneficiaires.groupe }}</td>
+                       </tr>
+                       
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+

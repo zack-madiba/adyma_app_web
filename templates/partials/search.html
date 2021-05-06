@@ -1,0 +1,45 @@
+{% extends 'partials/base.html' %}
+{% block title %} Résultat de la recherche {% endblock %}
+
+
+{% block content %}
+    <center>
+    {% if searched %}
+        <h3> Hello! {{ user.username }} </h3>
+        <p>Voici le résultat pour "{{ searched }}"</p> 
+        <hr>
+        {% for patient in patients %}
+           <a class="fs-5 fw-light text-reset" href="{% url 'beneficiaire_detail' patient.id %}">{{ patient }}<br> 
+           Date d'inscription :   {{ patient.date }}<br>
+           Résidence :  {{ patient.residence }}</a><br><br>
+        {% endfor %}
+
+        {% for prenom in prenoms %}
+
+            {{ prenom }}<br>
+            Date d'inscription :    {{ prenom.date }}<br>
+            Résidence :     {{ prenom.residence }}<br><br>
+        
+        {% endfor %}
+
+        {% for etabli in etablis %}
+
+        <a class="fs-5 fw-light text-reset" href="{% url 'etablissement_detail' etabli.id %}">Etablissement : {{ etabli }}<br>
+            Nom du directeur :    {{ etabli.nom_directeur }}<br>
+            Lieux :     {{ etabli.ville }}, {{ etabli.adresse}}</a><br>
+        
+        {% endfor %}
+
+
+    {% else %} 
+    <h3> Oups!! {{ user.username }} </h3>
+        <p>Veillez remplir le champ recherche</p>
+
+    {% endif %}
+
+        
+    </center>
+
+
+
+{% endblock %}

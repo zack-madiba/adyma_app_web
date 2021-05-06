@@ -1,0 +1,25 @@
+{% extends "partials/base.html" %}
+{% block title %} Fiche de test{% endblock %}
+{% block content %}
+{% include 'partials/topnav.html' %}
+{% load crispy_forms_tags %}
+
+
+
+ <div class="container">
+    <div class="row mt-1">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                <h4 class="text-center text-uppercase">Fiche de test</h4>
+                    <hr>
+                
+                    <form class="post-form border-box" action="{% url 'test' %}" method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <input type="submit" class="btn btn-success" value="Enregistrer">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

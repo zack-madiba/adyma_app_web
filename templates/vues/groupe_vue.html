@@ -1,0 +1,52 @@
+{% extends 'partials/base.html' %}
+{% block title %} Vue global des bénéficiaires {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h4 class="text-center text-uppercase mt-3">
+     Liste des Groupes
+</h4>
+<hr>
+<div class="container">
+  <div class="row my-8">
+    <div class="col"></div>
+    <div class="col-md-12">
+      <table class="table bg-white">
+    <thead class="bg-info"  style="background-color: rgb(247, 172, 22);">
+        <tr clas="text-white">
+          <th scope="col">Nom du groupe</th>
+          <th scope="col">Description du groupe</th>
+          <th scope="col">Activités du groupe</th>
+          <th scope="col">Liste des bénéficiaires</th>
+          <th scope="col">Editer</th>
+          <th scope="col">Supprimer</th>
+          <th scope="col">More</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for equipe in equipes %}
+        <tr>          
+          <td><a  class="text text-dark" href="#">{{ equipe.nom_groupe }}</a></td>
+          <td><a  class="text text-dark" href="#">{{ equipe.description }}</a></td>
+          <td><a  class="text text-dark" href="#">{{ equipe.active.name }}</a></td>
+          <td><a  class="text text-dark" href="#">{{ equipe.Beneficiaire.nom}}</a></td>
+          <td>
+            <a class="btn btn-outline-success btn-sm" href="{% url 'groupe_update' equipe.id %}">Update</a>
+          </td>
+            <td>
+            <a class="btn btn-outline-danger btn-sm" href="{% url 'groupe_delete' equipe.id %}">Delete</a>
+            </td>
+            <td>
+            <a  class="btn btn-outline-info btn-sm" href="#">More</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+
+
+  {% endblock %}
+  

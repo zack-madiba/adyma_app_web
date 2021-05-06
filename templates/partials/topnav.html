@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-around">
+<div class"container">
+<ul class="navbar-nav ">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Formulaires
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <p class="text-center text-dark ">Pour le benéficiaire<p>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'inscription' %}">Entretien initial</a>
+        <a class="dropdown-item" href="{% url 'psychosocial' %}">Diagnostic Psychosocial</a>
+        <a class="dropdown-item" href="{% url 'physique' %}">Diagnostique physique individuel</a>
+        <a class="dropdown-item" href="{% url 'test' %}">Fiche Test</a>
+        <div class="dropdown-divider"></div>
+        
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'activite' %}">Fiche activités (exercices)</a>
+        <a class="dropdown-item" href="{% url 'groupe' %}">Créer un nouveau groupe</a>
+        <a class="dropdown-item" href="{% url 'presence' %}">Feuille de présence</a>
+        <div class="dropdown-divider"></div>
+        <p class="text-center text-dark ">Autres<p></p>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'etablissement' %}">Enregistrer un nouvel établissement</a>
+        <a class="dropdown-item" href="{% url 'structurel' %}">Diagnostic structurel d'établissement</a>
+      </div>
+    </li>
+</ul>
+</div>
+<div class"container"></div>
+<ul class="navbar-nav ">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Les vues
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'beneficiaire' %}">Bénéficiaires</a>
+          <a class="dropdown-item" href="{% url 'groupe_vue' %}">Les groupes</a>
+          
+          <a class="dropdown-item" href="{% url 'etablissement_vue' %}">Les établissement</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'coach'  %}"> Les Coachs</a>
+        </div>
+      </li>
+</ul>
+</div>
+</div>

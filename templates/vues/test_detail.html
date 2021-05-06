@@ -1,0 +1,56 @@
+{% extends 'partials/base.html' %}
+{% block title %} Fiche test {% endblock %}
+
+
+
+{% block content %}
+    <div class="row mt-1">
+        <div class="col-md-6 offset-md-3">
+            <div class="border bg-white p-3 ">
+                {% for teste in testes %}
+                <hr>
+                <h4 class="text-center text-uppercase">Fiche Test de {{ teste.beneficiaire.nom }} {{ teste.beneficiaire.prenom }}</h4>
+                <hr>
+                <table class="table bg-white table-borderless">
+                    <tbody>
+                        <tr>
+                            <th scrop="row">Test fait par: </th>
+                            <td>{{ teste.user.username }}</td>
+                        </tr>
+                         <tr>
+                            <th scrop="row">Date du dernier diagnostic : </th>
+                            <td>{{ teste.date }}</td>
+                        </tr>
+                        <tr>
+                            <th scrop="row">Nom du bénéficiaire : </th>
+                            <td>{{ teste.beneficiaire.nom }} {{ teste.beneficiaire.prenom }}</td>
+                        </tr>
+                        <tr>
+                            <th scrop="row">Time up to go (TUG) : </th>
+                            <td>{{ teste.tug }}</td>
+                        </tr>
+                        <tr>
+                            <th scrop="row">Relevé de chaise par minute : </th>
+                            <td>{{ teste.relev_chaise }}</td>
+                        </tr>
+                        <tr>
+                            <th scrop="row">Aller au sol : </th>
+                            <td>{{ teste.get_Aller_soll_display }}</td>
+                        </tr>
+                        <tr>
+                         <th scrop="row">Périmétrage de marche en minutes (facultatif) :</th>
+                         <td>{{ teste.peri_marche }}</td>
+                     </tr>
+                    </tbody>
+                 </table>
+                
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+
+
