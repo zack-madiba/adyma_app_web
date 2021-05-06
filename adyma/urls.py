@@ -18,7 +18,7 @@ urlpatterns = [
     #___beneficiaires
 
     path('inscription/', views.entretien, name='inscription'),
-    path('filtre/', views.filtre, name='filtre'),
+    #path('filtre/', views.filtre, name='filtre'),
     path('beneficiaire/', views.beneficiaire_vue, name='beneficiaire'),
     path('beneficiaire/detail/<int:pk>/', views.beneficiaire_detail, name='beneficiaire_detail'),
     path('beneficiaire/delete/<int:pk>/', views.beneficiaire_delete, name='beneficiaire_delete'),
@@ -63,4 +63,4 @@ urlpatterns = [
     path('structurel/', views.structurel, name='structurel'),
 
 
-] #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 

@@ -32,11 +32,6 @@ def home(request):
     }
     return render(request, 'adyma/home.html', context)
 
-#____________filtre
-
-
-
-
 #_________recherche
 
 @login_required
@@ -52,12 +47,12 @@ def search(request):
     else:
         return render(request,'partials/search.html', {})
 
-
+"""
 def filtre(request):
     beneficiaire_list = Beneficiaire.objects.all()
     beneficiaire_filter = BeneficiaireFilter(request.GET, queryset=beneficiaire_list)
     return render(request, 'beneficiaire.html', {'filter':beneficiaire_filter})
-
+"""
 #___________________________________Beneficiaires_views_______________________
 
 @login_required
