@@ -7,7 +7,7 @@ Une phase de diagnostic, permettant la mise en place de projets individualisés 
 L’organisation d’activités extérieures: sorties, balades urbaines, rencontres inter-résidences… pour réinvestir son quartier 
 La formation des professionnels et aidants sur les questions de mobilité. 
 https://adyma.fr/ 
-Enjeu 
+## Enjeu 
 Afin de pouvoir appuyer sa démarche, Adyma souhaite développer une plateforme de suivi des bénéficiaires qui permettent de tracer leur participation au programme d’accompagnement et le restituer notamment aux directeurs d’établissement. 
 Un enjeu de recueil des données personnelles et du consentement à les traiter est à prévoir.
 
