@@ -1,4 +1,4 @@
-# Application web 
+# Adyma : bien-vieillir. 
 ##### Projet turbine
 ## Contexte 
 Adyma est une association qui intervient pour encourager la mobilité et favoriser le bien-vieillir dans les résidences autonomie, les résidences seniors et les Ehpad. Adyma s’appuie sur une méthodologie qui propose une approche globale, à la fois physique, psychologique et relationnelle. Au sein d’un établissement ou d’un territoire, l’accompagnateur Adyma formé en Activité Physique Adaptée co-construit avec les équipes gérontologiques un parcours pour accompagner les personnes vers plus de mobilité. 
