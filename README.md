@@ -26,14 +26,14 @@ Un enjeu de recueil des données personnelles et du consentement à les traiter 
   
 ### L'interface
 
-- Pour ce connecter à notre interface, il faut créer un super utilisateur depuis le terminal (  "python3 manage.py createsuperuser" ).
-- Lancer le serveur à l'aide depuis le terminal  ( "python3 manage.py runserver" ) ou alors depuis la page déconexion il y'a un onglet créer un compte.
+- Pour pouvoir se connecter à notre interface, il faut créer un super utilisateur depuis le terminal (  "python3 manage.py createsuperuser" ).
+- Lancer le serveur à l'aide depuis le terminal  ( "python3 manage.py runserver" ).
 - une fois connecté, vous pouvez enregistrer un bénéficiaire et lui faire suivre des diagnostics.
 
 
 #### Attention
 
-Dans l'onglet "Vues" ne pas prrendre en compte le coutton "Compte coach",  cette fonction est encore en dévéloppement. Faites aussi attention au boutton "supprimer" car il supprime de la base de donnée l'information supprimer et toutes les informations rattachées à celle ci. Il y'a donc pas de fonction d'archivage.
+Dans l'onglet "Vues" ne pas prendre en compte le boutton "Compte coach",  cette fonction est encore en dévéloppement. Faites aussi attention au boutton "supprimer" car il supprime de la base de données l'information supprimer et toutes les informations rattachées à celle ci. Il y'a donc pas de fonction d'archivage.
 
 ##### NB : Cette application est encore en dévelloppement.
  
